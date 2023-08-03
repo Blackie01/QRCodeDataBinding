@@ -1,0 +1,26 @@
+<section id="output-section" *ngIf="downloadUrl">
+  <div class="output-title">
+    <h3>Corporate Affairs Commission</h3>
+    <sub>Certified Extract</sub>
+  </div>
+
+  <div class="registrar-signature">
+    <div class="qrcode-div">
+      <qrcode
+        [width]="156"
+        class="qrcode"
+        [qrdata]="qrOutput"
+        [errorCorrectionLevel]="'M'"
+      ></qrcode>
+    </div>
+    <div class="registrar-details">
+      <img src="/assets/efs-sign.png" />
+      <!-- <a *ngIf="downloadUrl" [href]="downloadLink" download="qrcode.png">
+          Download QR Code
+        </a> -->
+      <p>A.G Abubakar</p>
+      <p>Registrar General</p>
+      <p>{{ currentDate | date }}</p>
+    </div>
+  </div>
+</section>
